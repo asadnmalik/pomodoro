@@ -15,9 +15,12 @@ body {
   border: 20px solid white;
   border-radius: 10rem;
 
-
   width: 20rem;
   height: 20rem;
+}
+
+.timer h4{
+  font-size: 4rem;
 }
 
 .row {

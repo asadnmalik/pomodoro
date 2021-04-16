@@ -2,13 +2,12 @@ let session_seconds = "00";
 let session_minutes = 00;
 
 
-
+// ---------------------------------------------FUNCTIONS-------------------------------------
 
 function setInitialTime() {
   document.getElementById("minutes").innerHTML = session_minutes;
   document.getElementById("seconds").innerHTML = session_seconds;
 }
-
 
 function start_work() {
 
@@ -60,7 +59,6 @@ function start_work() {
   }
 }
 
-
 function start_break(breakTime) {
   
 
@@ -108,8 +106,6 @@ function start_break(breakTime) {
   }
 }
 
-
-
 function reset(){
   //stopping all intervals
   clearInterval(minutes_interval)
@@ -133,12 +129,17 @@ function startTime(){
 }
 
 //stop the counter total time
-
 function stopTime(){
   const dateNow = new Date()
   return dateNow
 
 }
+
+
+
+
+
+// ------------------------------------------------EVENT LISTENERS-----------------------------------------------------
 
 // On click of the play button, execute the start_work() timer
 document.getElementById("start-button").addEventListener("click", () => {
@@ -150,8 +151,39 @@ document.getElementById("start-button").addEventListener("click", () => {
   document.getElementById("pause-button").classList.remove("d-none")
 });
 
+// Pause the timer
+document.getElementById("pause-button").addEventListener("click", () =>{
+  clearInterval(minutes_interval)
+  clearInterval(seconds_interval)
 
-//reset everything on button and stop the total timer counter and append the work name in session list including the total time. 
+  //remove pause button, reappear resume button
+  document.getElementById("pause-button").classList.add("d-none")
+  document.getElementById("resume-button").classList.remove("d-none")
+  
+} )
+
+
+// When timer is paused, resume the timer
+document.getElementById("resume-button").addEventListener("click", () => {
+  
+  minutes_interval = setInterval(()=> {
+    session_minutes = session_minutes - 1;
+    document.getElementById("minutes").innerHTML = session_minutes;}, 
+    60000);
+
+  seconds_interval = setInterval(() => {
+    session_seconds = session_seconds - 1;
+    document.getElementById("seconds").innerHTML = session_seconds;
+  }, 1000);
+
+
+  //reappear pause button, remove resume and start button 
+  document.getElementById("pause-button").classList.remove("d-none")
+  document.getElementById("resume-button").classList.add("d-none")
+  document.getElementById("start-button").classList.add("d-none")
+})
+
+// Reset everything on button and stop the total timer counter and append the work name in session list including the total time. 
 document.getElementById("reset-button").addEventListener("click", () => {
   reset();
   stopp = stopTime()
@@ -166,9 +198,10 @@ document.getElementById("reset-button").addEventListener("click", () => {
   document.getElementById("done").innerHTML = "";
   document.getElementById("done").classList.remove("show_message");
 
-  // make the play button reappear, remove pause button
+  // make the play button reappear, remove pause button, remove resume button
   document.getElementById("start-button").classList.remove("d-none")
   document.getElementById("pause-button").classList.add("d-none")
+  document.getElementById("resume-button").classList.add("d-none")
 
 
 

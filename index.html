@@ -71,14 +71,26 @@
 
       <!-- User Input Timer -->
       <div class="inputs container my-5 d-block justify-content-center">
-        <div class="work-name d-flex justify-content-center">
-          <input id ="taskname" type="text" name=taskname placeholder = "Enter task name">
+        <div class="work-name d-flex justify-content-center my-4">
+
+          <div class="d-block justify-content-center text-center">
+            <h5>Task Name</h5>
+            <input id ="taskname" type="text" name=taskname placeholder = "Enter task name">
+          </div>
+          
+          
         </div>
         <div class="timers d-flex justify-content-center">
+          <div class = "d-block justify-content-center text-center"> 
+            <h5>Work Duration</h3>
+            <input id= "worktime" type="text" name="worktime" placeholder="Enter Work Time" value=25>
+          </div>
           
-          <input id= "worktime" type="text" name="worktime" placeholder="Enter Work Time" value=25>
+          <div class="d-block justify-content-center text-center">
+            <h5>Break Duration</h3>
+            <input id= "breaktime" type="text" name="breaktime" placeholder="Enter Break Time" value=5>
+          </div>
           
-          <input id= "breaktime" type="text" name="breaktime" placeholder="Enter Break Time" value=5>
         </div>
 
       </div>

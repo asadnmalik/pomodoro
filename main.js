@@ -145,8 +145,9 @@ document.getElementById("start-button").addEventListener("click", () => {
   start_work();
   start = startTime()
   
-  //remove the play button
+  //remove the play button, add pause button
   document.getElementById("start-button").classList.add("d-none")
+  document.getElementById("pause-button").classList.remove("d-none")
 });
 
 
@@ -165,8 +166,9 @@ document.getElementById("reset-button").addEventListener("click", () => {
   document.getElementById("done").innerHTML = "";
   document.getElementById("done").classList.remove("show_message");
 
-  // make the play button reappear
+  // make the play button reappear, remove pause button
   document.getElementById("start-button").classList.remove("d-none")
+  document.getElementById("pause-button").classList.add("d-none")
 
 
 

@@ -144,6 +144,9 @@ function stopTime(){
 document.getElementById("start-button").addEventListener("click", () => {
   start_work();
   start = startTime()
+  
+  //remove the play button
+  document.getElementById("start-button").classList.add("d-none")
 });
 
 
@@ -161,6 +164,9 @@ document.getElementById("reset-button").addEventListener("click", () => {
   //remove the 'take break, continue work' messages
   document.getElementById("done").innerHTML = "";
   document.getElementById("done").classList.remove("show_message");
+
+  // make the play button reappear
+  document.getElementById("start-button").classList.remove("d-none")
 
 
 

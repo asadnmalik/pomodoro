@@ -4,6 +4,7 @@
 What's a Pomodoro? Using the Pomodoro method, you break your workday into 25-minute chunks separated by five-minute breaks. These intervals are referred to as Pomodoro
 
 This is how our app will look like:
+
 ![pomodoro-image](https://imgur.com/kEV9rTZ.png)
 
 
@@ -55,7 +56,7 @@ Then we have the 6 divs inside the main container
 
 ![layout-image](https://imgur.com/mPy5lQa.png)
 
-For the heading, we will simply use the heading tag <h3>
+For the heading, we will simply use the heading tag \<h3>
 
 ```HTML
 <!-- Heading -->

@@ -297,6 +297,7 @@ body {
 ```
 
 We have our final layout and will look like this.
+
 ![layout-image](https://imgur.com/LlzT63T.png)
 
 

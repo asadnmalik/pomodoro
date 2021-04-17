@@ -137,8 +137,6 @@ function stopTime(){
 
 
 
-
-
 // ------------------------------------------------EVENT LISTENERS-----------------------------------------------------
 
 // On click of the play button, execute the start_work() timer
